@@ -1,0 +1,68 @@
+<html>
+<head>
+    <title>Tugas Kalkulator Sederhana</title>
+</head>
+<body bgcolor="#e0f7fa">
+    <center>
+        <h2><b>Tugas Pemrograman Web</b></h2>
+        <h3>Kalkulator Sederhana</h3>
+        <br>
+        
+        <table border="2" cellpadding="10" cellspacing="0" bgcolor="white">
+            <tr>
+                <td colspan="4">
+                    <input type="text" id="layar" style="width: 100%; height: 40px; font-size: 20px;">
+                </td>
+            </tr>
+            <tr>
+                <td><button onclick="tekanAngka('1')" style="width: 50px; height: 50px;">1</button></td>
+                <td><button onclick="tekanAngka('2')" style="width: 50px; height: 50px;">2</button></td>
+                <td><button onclick="tekanAngka('3')" style="width: 50px; height: 50px;">3</button></td>
+                <td><button onclick="tekanAngka('+')" style="width: 50px; height: 50px; background-color: lightblue;">+</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="tekanAngka('4')" style="width: 50px; height: 50px;">4</button></td>
+                <td><button onclick="tekanAngka('5')" style="width: 50px; height: 50px;">5</button></td>
+                <td><button onclick="tekanAngka('6')" style="width: 50px; height: 50px;">6</button></td>
+                <td><button onclick="tekanAngka('-')" style="width: 50px; height: 50px; background-color: lightblue;">-</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="tekanAngka('7')" style="width: 50px; height: 50px;">7</button></td>
+                <td><button onclick="tekanAngka('8')" style="width: 50px; height: 50px;">8</button></td>
+                <td><button onclick="tekanAngka('9')" style="width: 50px; height: 50px;">9</button></td>
+                <td><button onclick="tekanAngka('*')" style="width: 50px; height: 50px; background-color: lightblue;">*</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="tekanAngka('.')" style="width: 50px; height: 50px;">.</button></td>
+                <td><button onclick="tekanAngka('0')" style="width: 50px; height: 50px;">0</button></td>
+                <td><button onclick="hitung()" style="width: 50px; height: 50px; background-color: lightgreen;">=</button></td>
+                <td><button onclick="tekanAngka('/')" style="width: 50px; height: 50px; background-color: lightblue;">/</button></td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <button onclick="hapus()" style="width: 100%; height: 40px; background-color: salmon; color: white;"><b>Clear</b></button>
+                </td>
+            </tr>
+        </table>
+    </center>
+
+    <script>
+    
+        function tekanAngka(angka) {
+            var layar = document.getElementById("layar");
+            layar.value = layar.value + angka;
+        }
+
+        function hapus() {
+            var layar = document.getElementById("layar");
+            layar.value = "";
+        }
+
+        function hitung() {
+            var layar = document.getElementById("layar");
+            var hasil = eval(layar.value);
+            layar.value = hasil;
+        }
+    </script>
+</body>
+</html>
